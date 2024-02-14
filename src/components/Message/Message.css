@@ -1,4 +1,4 @@
-/* .scrollBar::-webkit-scrollbar {
+.scrollBar::-webkit-scrollbar {
   width: 5px;
 }
 
@@ -9,4 +9,4 @@
 
 .scrollBar::-webkit-scrollbar-track {
   background: rgb(139, 139, 139);
-} */
+}
