@@ -1,93 +1,93 @@
-// import {
-//   Alert,
-//   Backdrop,
-//   Button,
-//   Card,
-//   CircularProgress,
-//   Grid,
-//   Snackbar,
-// } from "@mui/material";
-// import React, { useEffect, useState } from "react";
-// import RegistrationForm from "./RegisterForm";
-// import { Navigate, Route, Routes, useLocation, useNavigate } from "react-router-dom";
-// import { Login } from "@mui/icons-material";
-// import LoginForm from "./LoginForm";
-// import ResetPasswordRequest from "./ResetPasswordRequest";
-// import { useSelector } from "react-redux";
-// import ResetPassword from "./ResetPassword";
+import {
+  Alert,
+  Backdrop,
+  Button,
+  Card,
+  CircularProgress,
+  Grid,
+  Snackbar,
+} from "@mui/material";
+import React, { useEffect, useState } from "react";
+import RegistrationForm from "./RegisterForm";
+import { Navigate, Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { Login } from "@mui/icons-material";
+import LoginForm from "./LoginForm";
+import ResetPasswordRequest from "./ResetPasswordRequest";
+import { useSelector } from "react-redux";
+import ResetPassword from "./ResetPassword";
 
-// const Authentication = () => {
-//   const location = useLocation();
-//   const navigate = useNavigate();
-//   const [openSnakbar, setOpenSnakbar] = useState(false);
-//   const { auth } = useSelector((store) => store);
+const Authentication = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [openSnakbar, setOpenSnakbar] = useState(false);
+  const { auth } = useSelector((store) => store);
 
-//   const handleClose = () => {
-//     setOpenSnakbar(false);
-//   };
+  const handleClose = () => {
+    setOpenSnakbar(false);
+  };
 
-//   useEffect(() => {
-//     if (auth.resetPasswordLink) {
-//       setOpenSnakbar(true);
-//     }
-//   }, [auth.resetPasswordLink]);
-//   return (
-//     <div className="">
-//       <Grid container>
-//         <Grid className="h-screen overflow-hidden" item xs={7}>
-//           <img
-//             className="h-full w-full"
-//             src="https://cdn.pixabay.com/photo/2021/10/18/19/34/social-media-6721926_640.png"
-//             alt=""
-//           />
-//         </Grid>
-//         <Grid item xs={5}>
-//         <div className="px-20 flex flex-col justify-center h-full">
-//   <div className="card p-8">
-//     <div className="flex flex-col items-center mb-5 space-y-1">
-//       <h1 style={{ fontFamily: 'cursive', color: 'cyan' }} className="logo text-center">
-//         SoniSphere
-//       </h1>
-//       <p style={{ fontFamily: 'cursive', color: 'cyan' }} className="text-center text-sm w-[70%]">
-//         Connect, Share, Thrive
-//       </p>
-//     </div>
+  useEffect(() => {
+    if (auth.resetPasswordLink) {
+      setOpenSnakbar(true);
+    }
+  }, [auth.resetPasswordLink]);
+  return (
+    <div className="">
+      <Grid container>
+        <Grid className="h-screen overflow-hidden" item xs={7}>
+          <img
+            className="h-full w-full"
+            src="https://cdn.pixabay.com/photo/2021/10/18/19/34/social-media-6721926_640.png"
+            alt=""
+          />
+        </Grid>
+        <Grid item xs={5}>
+        <div className="px-20 flex flex-col justify-center h-full">
+  <div className="card p-8">
+    <div className="flex flex-col items-center mb-5 space-y-1">
+      <h1 style={{ fontFamily: 'cursive', color: 'cyan' }} className="logo text-center">
+        SoniSphere
+      </h1>
+      <p style={{ fontFamily: 'cursive', color: 'cyan' }} className="text-center text-sm w-[70%]">
+        Connect, Share, Thrive
+      </p>
+    </div>
 
-//               <Routes>
-//                 <Route path="/" element={<RegistrationForm />}/>
-//                 <Route path="/reset-password-req" element={ <ResetPasswordRequest />}/>
-//                 <Route path="/reset-password" element={ <ResetPassword />}/>
-//                 <Route path="/register" element={ <RegistrationForm />}/>
-//                 <Route path="/login" element={ <LoginForm /> }/>
+              <Routes>
+                <Route path="/" element={<RegistrationForm />}/>
+                <Route path="/reset-password-req" element={ <ResetPasswordRequest />}/>
+                <Route path="/reset-password" element={ <ResetPassword />}/>
+                <Route path="/register" element={ <RegistrationForm />}/>
+                <Route path="/login" element={ <LoginForm /> }/>
                 
-//               </Routes>
+              </Routes>
 
              
-//             </div>
-//           </div>
-//         </Grid>
-//       </Grid>
+            </div>
+          </div>
+        </Grid>
+      </Grid>
 
-//       <Snackbar
-//         anchorOrigin={{ vertical: "top", horizontal: "right" }}
-//         open={openSnakbar}
-//         autoHideDuration={6000}
-//         onClose={handleClose}
-//       >
-//         <Alert severity="success" sx={{ width: "100%" }}>
-//           {auth.resetPasswordLink}
-//         </Alert>
-//       </Snackbar>
+      <Snackbar
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        open={openSnakbar}
+        autoHideDuration={6000}
+        onClose={handleClose}
+      >
+        <Alert severity="success" sx={{ width: "100%" }}>
+          {auth.resetPasswordLink}
+        </Alert>
+      </Snackbar>
 
-//       <Backdrop
-//         sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-//         open={auth.loading}
-//         // onClick={handleClose}
-//       >
-//         <CircularProgress color="inherit" />
-//       </Backdrop>
-//     </div>
-//   );
-// };
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={auth.loading}
+        // onClick={handleClose}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
+    </div>
+  );
+};
 
-// export default Authentication;
+export default Authentication;
