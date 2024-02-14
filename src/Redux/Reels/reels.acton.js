@@ -46,31 +46,31 @@ export const getUsersReels=(userId)=>async (dispatch)=>{
     }
 }
 
-export const likePost=(postId)=>async (dispatch)=>{
-    dispatch({type:LIKE_POST_REQUEST})
-    try {
+// export const likePost=(postId)=>async (dispatch)=>{
+//     dispatch({type:LIKE_POST_REQUEST})
+//     try {
 
-        const {data} = await api.put(`/api/posts/like/${postId}`)
+//         const {data} = await api.put(`/api/posts/like/${postId}`)
 
-        dispatch({type:LIKE_POST_SUCCESS,payload:data})
+//         dispatch({type:LIKE_POST_SUCCESS,payload:data})
 
-    } catch (error) {
+//     } catch (error) {
 
-        console.log("catch error ",error)
-        dispatch({type:LIKE_POST_FAILUER,payload:error})
-    }
-}
+//         console.log("catch error ",error)
+//         dispatch({type:LIKE_POST_FAILUER,payload:error})
+//     }
+// }
 
-export const savePost=(postId)=>async (dispatch)=>{
-    dispatch({type:SAVE_POST_REQUEST})
-    try {
+// export const savePost=(postId)=>async (dispatch)=>{
+//     dispatch({type:SAVE_POST_REQUEST})
+//     try {
 
-        const {data} = await api.put(`/api/posts/${postId}/save`)
+//         const {data} = await api.put(`/api/posts/${postId}/save`)
 
-        dispatch({type:SAVE_POST_SUCCESS,payload:data})
+//         dispatch({type:SAVE_POST_SUCCESS,payload:data})
         
-    } catch (error) {
-        console.log("catch error ",error)
-        dispatch({type:SAVE_POST_FAILUER,payload:error})
-    }
-}
+//     } catch (error) {
+//         console.log("catch error ",error)
+//         dispatch({type:SAVE_POST_FAILUER,payload:error})
+//     }
+// }
